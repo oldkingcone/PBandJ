@@ -48,7 +48,6 @@ while loop == 1:
                         "%languages%" OR "%tools%" OR "%privacy%" OR "%cookies_policy%" OR "&contact%" OR "%dmca%"
                         OR "%scraping%" OR "%creativecommons%" OR "%login%" OR "%messages%" OR "%alerts%" 
                         OR "%settings%" '''
-        from time import sleep
         for elem in element:
             hrefs = elem.get_attribute("href")
             print("[!] Item found: %s [!]" % hrefs)
