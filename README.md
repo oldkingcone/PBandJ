@@ -8,8 +8,8 @@ This will work on BSD and Linux systems.
 
 **To do list:**
 
--[ ]**1.** _Windows Compatability._
--[]**2.** _Clean up DB so that only paste links are present within the DB._
--[]**3.** _Collect a summary of contents within each paste._
--[]**4.** _Filtering to search for specific strings contained within each paste.(DB functionality based on summary.)_
--[]**5.** _Add event trapping for assert failures before the user wants to stop crawling._
+- []**1.** _Windows Compatability._
+- []**2.** _Clean up DB so that only paste links are present within the DB._
+- []**3.** _Collect a summary of contents within each paste._
+- []**4.** _Filtering to search for specific strings contained within each paste.(DB functionality based on summary.)_
+- []**5.** _Add event trapping for assert failures before the user wants to stop crawling._
