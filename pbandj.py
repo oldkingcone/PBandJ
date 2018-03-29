@@ -21,18 +21,25 @@ print('[***] Please crawl responsibily, maintain about a 15 second wait time bef
 sleep(5)
 loop = 1
 print('[**] Please wait... [**]\n')
+sleep(3)
+driver = webdriver.ChromeOptions()
 print('[**] Opening drivers with headless option, you wont see anything until it starts pulling links. [**]\n')
 print('[*] Retriving https://www.pastebin.com/archive [*]\n')
-sleep(5)
+driver.add_argument('headless')
+browse = webdriver.Chrome(chrome_options=driver)
 while loop == 1:
     try:
         os.system('clear')
-        driver = webdriver.ChromeOptions()
-        driver.add_argument('headless')
-        browse = webdriver.Chrome(chrome_options=driver)
-        browse.get("https://www.pastebin.com/archive")
-        print('[**] Pulling data [**]\n')
-        assert "Pastes Archive" in browse.title
+        try:
+            browse.get("https://www.pastebin.com/archive")
+            print('[**] Pulling data [**]\n')
+            assert "Pastes Archive" in browse.title
+        except AssertionError:
+            loop = 0
+            print('[*!*] Please wait, Page did not load properly, waiting and restarting.[*1*]')
+            sleep(5)
+            loop = 1
+            continue
         element = browse.find_elements_by_xpath("//a[@href]")
         database = sqlite3.connect('crawls.sqlite')
         c = database.cursor()
@@ -42,12 +49,6 @@ while loop == 1:
         wait_time = 15
         sql_stmt = "INSERT INTO pastebin(link) VALUES('%s')"
         sql_stmt = str(sql_stmt)
-
-        ignore_urls = '''"%pro%" OR "%tools#%" OR "%facebook%" OR 
-                        "%twitter%" OR "%steadfast%" OR "%tribalfusion%" OR "%trends%" OR "%api%" OR "%faq%" OR 
-                        "%languages%" OR "%tools%" OR "%privacy%" OR "%cookies_policy%" OR "&contact%" OR "%dmca%"
-                        OR "%scraping%" OR "%creativecommons%" OR "%login%" OR "%messages%" OR "%alerts%" 
-                        OR "%settings%" '''
         for elem in element:
             hrefs = elem.get_attribute("href")
             print("[!] Item found: %s [!]" % hrefs)
@@ -55,28 +56,7 @@ while loop == 1:
             database.commit()
             loop = 0
         if loop == 0:
-            print('[!] While Sleeping, purging DB of garbage URL\'s: %s [!]' % ignore_urls)
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%pro%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%language%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%steadfast%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%deal_%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%api%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%login%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%cookies%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%faq%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%dmca%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%scraping%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%messages%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%creativecommons%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%facebook%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%twitter%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%settings%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%privacy%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%tribalfusion%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%tools%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%trends%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%contact%"')
-            c.execute('DELETE FROM pastebin WHERE link LIKE "%alert%"')
+            print('[**] Sleeping...... [**]')
             database.commit()
             browse.quit()
             sleep(wait_time)
