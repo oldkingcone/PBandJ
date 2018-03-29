@@ -21,6 +21,12 @@ ____________                   _     ___
 by [**] @old_king_cone [**]\n''')
 print('[***] Please crawl responsibily, maintain about a 15 second wait time before each pull \n'
       'That way you avoid getting thrown in jail for doing a DDOS and get referred to as an asshole. [***]\n')
+database = sqlite3.connect('crawls.sqlite')
+c = database.cursor()
+c.execute('''CREATE TABLE IF NOT EXISTS pastebin(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+         date_group TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL, link TEXT, summary TEXT)''')
+sql_stmt = "INSERT INTO pastebin(link) VALUES('%s')"
+sql_stmt = str(sql_stmt)
 sleep(5)
 loop = 1
 print('[**] Please wait... [**]\n')
@@ -47,14 +53,7 @@ while loop == 1:
             print('[*!*] Please wait, Page did not load properly, waiting and restarting.[*1*]')
             loop = 0
         element = browse.find_elements_by_xpath("//a[@href]")
-        database = sqlite3.connect('crawls.sqlite')
-        c = database.cursor()
-        c.execute('''CREATE TABLE IF NOT EXISTS pastebin(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-         date_group TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL, link TEXT, summary TEXT)''')
-        loop = 1
         wait_time = 15
-        sql_stmt = "INSERT INTO pastebin(link) VALUES('%s')"
-        sql_stmt = str(sql_stmt)
         for elem in element:
             hrefs = elem.get_attribute("href")
             print("[!] Item found: %s [!]" % hrefs)
