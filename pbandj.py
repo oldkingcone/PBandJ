@@ -37,9 +37,6 @@ while loop == 1:
         except AssertionError:
             loop = 0
             print('[*!*] Please wait, Page did not load properly, waiting and restarting.[*1*]')
-            sleep(5)
-            loop = 1
-            continue
         element = browse.find_elements_by_xpath("//a[@href]")
         database = sqlite3.connect('crawls.sqlite')
         c = database.cursor()
