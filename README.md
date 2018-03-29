@@ -9,6 +9,8 @@ Please note, upon loading and calling the Chrome driver(**_if it is indeed in yo
 # **Usage:**
 - You will **need** to export into your path either the chrome driver(_Chromium_) or firefox(_Gecko_)
 - Next, you need to change directory into the cloned directory.
+- *Run, sudo pip install -r requirements.txt (Linux based systems)
+* on BSD based systems, run pip install -r requirements.txt --user
 - Then run python ./pbandj.py
 - Crack open a cold one with the boys(or girls) and watch as the script does its magic.
 
