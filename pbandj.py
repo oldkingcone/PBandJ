@@ -4,7 +4,7 @@ try:
     import socket
     import os
     from selenium import webdriver
-    from selenium import common
+    from selenium.common.exceptions import *
     from time import sleep
     import sqlite3
 except (ImportError, ImportWarning) as e:
