@@ -24,3 +24,10 @@ This will work on BSD and Linux systems.
 - **4.** _Filtering to search for specific strings contained within each paste.(DB functionality based on summary.)_
 - **5.** _Add event trapping for assert failures before the user wants to stop crawling._
 - **6.** _Figure out a more simple method to execute many SQL commands at once from the python script, **OR** set up triggers within the database **OR** have all deletion commands execute once the script is exited by the user on the clean up._
+
+# **Future Implementation:**
+- **1.** _Write Scrapy version of this, for a more dynamic crawler._
+
+# **Closing:**
+
+- Any of you looking to jump onto this project, feel free to reach out to me at [PBandJ Project Email](pbandjproject@protonmail.com) pbandjproject at protonmail dot com
