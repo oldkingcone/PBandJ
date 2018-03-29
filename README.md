@@ -4,7 +4,13 @@ Presently crawls only that URL for all new pastes within that page, commits all 
 
 I will be expanding it to crawl all URL's found and store a summary of those contents into an SQLITE3 database. Presently, it parses the links and stores all inside an SQLITE database and then trims out the fat by pulling #MOST unwanted links out of the database.
 
-Please note, upon loading and calling the Chrome driver(if it is indeed in your path) the script will appear to hang, it is not hanging or broken. The script is loading a bloated driver into memory and requesting the specified URL, or list of URL's. Please be patient as it is working.
+Please note, upon loading and calling the Chrome driver(**_if it is indeed in your path_**) the script will appear to hang, it is not hanging or broken. The script is loading a bloated driver into memory and requesting the specified URL, or list of URL's. Please be patient as it is working.
+
+##**Usage**
+- You will **need** to export into your path either the chrome driver(_Chromium_) or firefox(_Gecko_)
+- Next, you need to change directory into the cloned directory.
+- Then run python ./pbandj.py
+- Crack open a cold one with the boys(or girls) and watch as the script does its magic.
 
 This will work on BSD and Linux systems.
 
