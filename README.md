@@ -6,10 +6,10 @@ I will be expanding it to crawl all URL's found and store a summary of those con
 
 This will work on BSD and Linux systems.
 
----TODO:
+**To do list:**
 
-1. Windows Compatability.
-2. Clean up DB so that only paste links are present within the DB.
-3. Collect a summary of contents within each paste.
-4. Filtering to search for specific strings contained within each paste.(DB functionality based on summary.)
-5. Add event trapping for assert failures.
+*1. Windows Compatability.
+*2. Clean up DB so that only paste links are present within the DB.
+*3. Collect a summary of contents within each paste.
+*4. Filtering to search for specific strings contained within each paste.(DB functionality based on summary.)
+*5. Add event trapping for assert failures.
