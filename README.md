@@ -14,7 +14,7 @@ Please note, upon loading and calling the Chrome driver(**_if it is indeed in yo
 
 This will work on BSD and Linux systems.
 
-**To do list:**
+# **To do list:**
 
 - **1.** _Windows Compatability._
 - **2.** _Clean up DB so that only paste links are present within the DB._
