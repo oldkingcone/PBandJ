@@ -75,7 +75,7 @@ while loop == 1:
         import sys
         browse.quit()
         print('[!] Sanitizing and Exiting due to: %s[!]'% str(e))
-        print('[!] Deleting any URL\'s that begin with: \n%s' % str(ignore_urls))
+        print('[!] Deleting any URL\'s that contain: \n%s' % str(ignore_urls))
         c.execute('DELETE FROM pastebin WHERE link LIKE "%alert%"')
         c.execute('DELETE FROM pastebin WHERE link LIKE "%contact%"')
         c.execute('DELETE FROM pastebin WHERE link LIKE "%pro%"')
