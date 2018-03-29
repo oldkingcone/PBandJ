@@ -1,7 +1,10 @@
+
 try:
+    import selenium
     import socket
     import os
     from selenium import webdriver
+    from selenium import common
     from time import sleep
     import sqlite3
 except (ImportError, ImportWarning) as e:
@@ -59,7 +62,7 @@ while loop == 1:
             sleep(wait_time)
             loop += 1
         continue
-    except(KeyboardInterrupt, socket.error) as e:
+    except(KeyboardInterrupt, socket.error, selenium.common.exceptions) as e:
         database = sqlite3.connect('crawls.sqlite')
         c = database.cursor()
         ignore_urls = '''"%pro%" OR "%tools#%" OR "%facebook%" OR 
