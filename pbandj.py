@@ -38,8 +38,8 @@ while loop == 1:
             print('[**] Pulling data [**]\n')
             assert "Pastes Archive" in browse.title
         except AssertionError:
-            loop = 0
             print('[*!*] Please wait, Page did not load properly, waiting and restarting.[*1*]')
+            loop = 0
         element = browse.find_elements_by_xpath("//a[@href]")
         database = sqlite3.connect('crawls.sqlite')
         c = database.cursor()
