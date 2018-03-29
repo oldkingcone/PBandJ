@@ -70,14 +70,12 @@ while loop == 1:
     except(KeyboardInterrupt, socket.error) as e:
         database = sqlite3.connect('crawls.sqlite')
         c = database.cursor()
-        ignore_urls = '''"%pro%" OR "%tools#%" OR "%facebook%" OR 
-                "%twitter%" OR "%steadfast%" OR "%tribalfusion%" OR "%trends%" OR "%api%" OR "%faq%" OR 
-                "%languages%" OR "%tools%" OR "%privacy%" OR "%cookies_policy%" OR "&contact%" OR "%dmca%"
-                OR "%scraping%" OR "%creativecommons%" OR "%login%" OR "%messages%" OR "%alerts%" OR "%settings%" '''
+        ignore_urls = '''pro tools# facebook twitter steadfast tribalfusion trends api faq languages tools privacy 
+        cookies_policy contact dmca scraping creativecommons login messages alerts settings '''
         import sys
         browse.quit()
         print('[!] Sanitizing and Exiting due to: %s[!]'% str(e))
-        print('[!] Deleting: %s [!]' % str(ignore_urls))
+        print('[!] Deleting any URL\'s that begin with: \n%s' % str(ignore_urls))
         c.execute('DELETE FROM pastebin WHERE link LIKE "%alert%"')
         c.execute('DELETE FROM pastebin WHERE link LIKE "%contact%"')
         c.execute('DELETE FROM pastebin WHERE link LIKE "%pro%"')
