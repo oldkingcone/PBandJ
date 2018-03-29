@@ -28,8 +28,14 @@ sleep(3)
 driver = webdriver.ChromeOptions()
 print('[**] Opening drivers with headless option, you wont see anything until it starts pulling links. [**]\n')
 print('[*] Retriving https://www.pastebin.com/archive [*]\n')
-driver.add_argument('headless')
-browse = webdriver.Chrome(chrome_options=driver)
+try:
+    driver.add_argument('headless')
+    browse = webdriver.Chrome(chrome_options=driver)
+except selenium.common.exceptions:
+    import sys
+    print("[!!] Driver is not in your path, and cannot be loaded, exiting. [!!]")
+    sys.exit(1)
+
 while loop == 1:
     try:
         os.system('clear')
@@ -62,7 +68,7 @@ while loop == 1:
             sleep(wait_time)
             loop += 1
         continue
-    except(KeyboardInterrupt, socket.error, selenium.common.exceptions) as e:
+    except(KeyboardInterrupt, socket.error) as e:
         database = sqlite3.connect('crawls.sqlite')
         c = database.cursor()
         ignore_urls = '''"%pro%" OR "%tools#%" OR "%facebook%" OR 
