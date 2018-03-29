@@ -6,7 +6,7 @@ I will be expanding it to crawl all URL's found and store a summary of those con
 
 Please note, upon loading and calling the Chrome driver(**_if it is indeed in your path_**) the script will appear to hang, it is not hanging or broken. The script is loading a bloated driver into memory and requesting the specified URL, or list of URL's. Please be patient as it is working.
 
-##**Usage**
+# **Usage**
 - You will **need** to export into your path either the chrome driver(_Chromium_) or firefox(_Gecko_)
 - Next, you need to change directory into the cloned directory.
 - Then run python ./pbandj.py
