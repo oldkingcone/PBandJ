@@ -3,14 +3,14 @@
 - You must include a copy of the error, and, code to replicate the error. This is a must so that the issue can be diagnosed and properly fixed.
 # **Basic** **Template:**
 
-''' 
-\1. Code used.
+''' text
+1. Code used.
 \------------------------------------------------------------------
-\2. Error Message produced.
+2. Error Message produced.
 \------------------------------------------------------------------
-\3.Hypothisis on Cause, or theorized diagnosis.
+3.Hypothisis on Cause, or theorized diagnosis.
 \------------------------------------------------------------------
-\4. Suggested method of Patch/Fix.
+4. Suggested method of Patch/Fix.
 '''
 
 
