@@ -31,3 +31,4 @@ This will work on BSD and Linux systems.
 # **Closing:**
 
 - Any of you looking to jump onto this project, feel free to reach out to me at [PBandJ Project Email](pbandjproject@protonmail.com) pbandjproject at protonmail dot com
+- Dicord Server: [Discord invite Link](https://discord.gg/XjZzEnf)
