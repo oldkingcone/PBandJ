@@ -8,7 +8,7 @@
 - \------------------------------------------------------------------
 - 2. Error Message produced.
 - \------------------------------------------------------------------
-- 3.Hypothisis on Cause, or theorized diagnosis.
+- 3. Hypothisis on Cause, or theorized diagnosis.
 - \------------------------------------------------------------------
 - 4. Suggested method of Patch/Fix.
 
