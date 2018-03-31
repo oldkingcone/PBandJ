@@ -8,6 +8,7 @@ Please note, upon loading and calling the Chrome driver(**_if it is indeed in yo
 
 # **Scrapy spider usage:**
 - On linux systems, use **apt install python-scrapy** to install the scrapy command line utilities, next you will want to **cd** into the freshly cloned directory, and use this command **scrapy crawl pb_main**, this command will start the spider.
+- If you are having issues on running the spider, from within scrapy, please refer to the scrapy docs to get a better understanding on how to manage Scrapy spiders from the linux command like, with the scrapy utils. [Scrapy Docs](https://doc.scrapy.org/en/latest/intro/tutorial.html)
 - Please make note, as this develops there will be more functionality added into it. Please be patient, more greatness is coming.
 
 
