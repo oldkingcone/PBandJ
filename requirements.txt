@@ -1,2 +1,3 @@
 selenium
 sqlite3
+scrapy
