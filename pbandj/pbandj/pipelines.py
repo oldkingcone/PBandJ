@@ -6,6 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
+
 try:
     from datetime import datetime
     from scrapy.exceptions import DropItem
@@ -30,6 +31,10 @@ class DuplicateCheckingPipeline(object):
                         # Hopefully, this works fine.
                         try:
                             dt = datetime.now()
+                            # --------------------------------------------------------------------------------------------------------------------------------
+                            # Because im no dumb dumb, I left out the username and password that will be used for this project on my personal servers/machines.
+                            # You will need to generate your own username and password combo. Sorry.
+                            # --------------------------------------------------------------------------------------------------------------------------------
                             con = psycopg2.connect(
                             "host = 'localhost' dbname = 'crawls' user = 'YOURUNIQUEUSRNAME' password = 'YOURUNIQUEPASSWORD'")
                             cur = con.cursor()
